@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+    string firstName, middleName, lastName, theName;
+
+    getline(cin, theName);
+
+    int findN = theName.find(" ");
+    firstName = theName.substr(0, findN);
+    int findN2 = theName.find(" ", findN + 1);
+    if (findN2 != string::npos) {
+       //changed from findN2 + 1 to findN + 1
+        middleName = theName.substr(findN + 1, findN2 - findN - 1);
+        lastName = theName.substr(findN2 + 1, theName.length() - findN2 - 1);
+        cout << lastName << ", " << firstName[0] << "." << middleName[0] << "." << endl;
+    }
+    else {
+        lastName = theName.substr(findN + 1, theName.length() - findN - 1);
+                           //fixed the white space " . " -> ". "
+        cout << lastName << ", " << firstName[0] << "." << endl;
+    }
+
+
+    return 0;
+}

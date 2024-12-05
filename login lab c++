@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	string login;
+	string first;
+	string last;
+	int number;
+
+   cin >> first;
+   cin >> last;
+   cin >> number;
+   
+   string fullName = first + " " + last;
+   
+   int findN = fullName.find(" ");
+   first = fullName.substr(0, findN);
+   last = fullName.substr(findN + 1, 5);
+   number = number % 100;
+
+   cout << "Your login name: " << last << first[0] << number << endl;
+	
+	return 0;
+}

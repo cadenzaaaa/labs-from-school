@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   
+   int change;
+   int cents;
+   cin >> cents;
+
+   int numDollars = (cents/ 100); 
+   change = cents % 100;
+   int numQuarters = (change / 25);
+   change = change % 25;
+   int numDimes = (change / 10);
+   change = change % 10;
+   int numNickels = (change / 5);
+   change = change % 5;
+   int numPennies = (change / 1);
+   change = change % 1;
+   
+   //cents
+   if (cents == 0) {
+      cout << "No change" << endl;
+   }
+
+   //dollars
+   if (numDollars == 1) {
+      cout << numDollars << " Dollar" << endl;
+   }
+   else if (numDollars > 1) {
+      cout << numDollars << " Dollars" << endl;
+   }
+   //quarters 
+   if (numQuarters == 1) {
+      cout << numQuarters << " Quarter" << endl;
+   }
+   else if (numQuarters > 1) {
+      cout << numQuarters << " Quarters" << endl;
+   }
+   
+   //dimes 
+   if (numDimes == 1) {
+      cout << numDimes << " Dime" << endl;
+   }
+   else if (numDimes > 1) {
+      cout << numDimes << " Dimes" << endl;
+   }
+   
+   //nickels
+   if (numNickels == 1) {
+      cout << numNickels << " Nickel" << endl;
+   }
+   else if (numNickels > 1) {
+      cout << numNickels << " Nickels" << endl;
+   }
+   
+   //pennies
+   if (numPennies == 1) {
+      cout << numPennies << " Penny" << endl;
+   }
+   else if (numPennies > 1) {
+      cout << numPennies << " Pennies" << endl;
+   }
+   return 0;
+}

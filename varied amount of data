@@ -1,0 +1,36 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+
+   int input;
+   int inputTotal;
+   int count;
+   float avg;
+   int max;
+   
+   
+   max = 0;
+   inputTotal = 0;
+   count = 0;
+   cin >> input; 
+   
+   while (input >= 0)   {
+      if (max <= input) {
+         max = input;
+      }
+      inputTotal += input;
+      cin >> input;
+      count++;
+   }
+      
+   avg = double(inputTotal) / count;
+   
+   cout << fixed << setprecision(2);
+   cout << max << " " << avg;
+   
+   cout << endl;
+   
+   return 0;
+}

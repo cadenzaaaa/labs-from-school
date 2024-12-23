@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+   vector<int> inputs;
+   int x;
+   int i; 
+   
+   cin >> x;
+   while (x != -1) {
+      inputs.push_back(x);
+      cin >> x;
+   }
+   
+   for (i = inputs.at(inputs.size() - 1); i > 0; --i) {
+      cout << inputs.at(inputs.size() - i) << endl;
+   }
+
+   return 0;
+}

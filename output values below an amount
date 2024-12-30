@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+   int intAmnt;
+   cin >> intAmnt;
+   vector<int> numList(intAmnt);
+   
+   int i;
+   int threshVal;
+   
+   for (i = 0; i < numList.size(); ++i) {
+      cin >> numList.at(i);
+   }
+   
+   cin >> threshVal;
+   for (i = 0; i < numList.size(); ++i) {
+      if (numList.at(i) <= threshVal) {
+         cout << numList.at(i) << ",";
+      }
+      else {
+         continue;
+      }
+   }
+   
+   cout << endl;
+   
+   return 0;
+}

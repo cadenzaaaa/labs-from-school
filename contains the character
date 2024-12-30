@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <cstring>
+using namespace std;
+
+int main() {
+
+   vector<string> wordList;
+   string word;
+   int num;
+   int i;
+   char letter;
+   
+   cin >> num;
+   
+   while (num > 0) {
+      cin >> word;
+      wordList.push_back(word);
+      num--;
+   }
+   
+   cin >> letter;
+   for (i = 0; i < wordList.size(); ++i) {
+      string w = wordList[i];
+      if (w.find(letter) != string::npos) {
+         cout << w << ",";
+      }
+      else {
+         continue;
+      }
+   }
+   
+   cout << endl;
+   
+   return 0;
+
+}

@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>   // Must include vector library to use vectors
+using namespace std;
+
+int main() {
+   const int MAX_SIZE(9);
+   vector<int> numList;
+   
+   int i;
+   int x;
+
+   
+ 
+   int num;
+   while (std::cin >> num && num >= 0) {
+      numList.push_back(num);
+
+      // Check if the number of items exceeds the maximum
+       if (numList.size() > MAX_SIZE) {
+         std::cout << "Too many numbers" << std::endl;
+         return 0;
+      }
+   }
+
+   cout << "Middle item: " << numList.at(numList.size() / 2) << endl;
+   return 0;
+}

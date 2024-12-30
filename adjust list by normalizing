@@ -1,0 +1,33 @@
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+int main() {
+
+   int num;
+   cin >> num; 
+   vector<float> numList(num);
+   
+   float maxVal = 0;
+   
+   for (size_t i = 0; i < numList.size(); ++i) {
+      cin >> numList.at(i);
+      if (maxVal <= numList.at(i)) {
+         maxVal = numList.at(i);
+      }
+      else {
+         continue;
+      }
+   }
+   
+   for (size_t i = 0; i < numList.size(); ++i) {
+      cout << fixed << setprecision(2);
+      cout << numList.at(i) / maxVal << " ";
+   }
+   
+   cout << endl;
+   
+   return 0;
+   
+}

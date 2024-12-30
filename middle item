@@ -5,12 +5,7 @@ using namespace std;
 int main() {
    const int MAX_SIZE(9);
    vector<int> numList;
-   
-   int i;
-   int x;
 
-   
- 
    int num;
    while (std::cin >> num && num >= 0) {
       numList.push_back(num);

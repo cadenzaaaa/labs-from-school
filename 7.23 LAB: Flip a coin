@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+string CoinFlip() {
+   int numRandom;
+   numRandom =  (rand() % 2);
+   
+   if (numRandom == 1) {
+      return "Heads";
+   }
+   else {
+      return "Tails";
+   }
+}
+
+int main() {
+   int i;
+   int numRandom;
+   
+   cin >> numRandom;
+   
+   srand(2);  // Unique seed
+
+   for(i = 0; i < numRandom; i++){
+      cout << CoinFlip() << endl;
+   }
+   
+   return 0;
+}

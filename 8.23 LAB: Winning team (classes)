@@ -1,0 +1,109 @@
+// ---- main.cpp ----
+
+#include <iostream>
+#include <string>
+#include "Team.h"
+using namespace std;
+
+int main() {
+   string name;
+   int wins;
+   int losses;
+   Team team;
+
+   cin >> name;
+   cin >> wins;
+   cin >> losses;
+
+   team.SetName(name);
+   team.SetWins(wins);
+   team.SetLosses(losses);
+
+   team.PrintStanding();
+   
+   return 0;
+}
+
+
+// ----team.h----
+
+#ifndef TEAMH
+#define TEAMH
+
+#include <string>
+
+using namespace std;
+
+class Team {
+   // TODO: Declare private data members - name, wins, losses
+   private: 
+      string teamname;
+      int teamwins;
+      int teamlosses;
+   
+   public:
+      void SetName(string name);
+      void SetWins(int wins);
+      void SetLosses(int losses);
+      
+      string GetName(); 
+      int GetWins();
+      int GetLosses();
+      double GetWinPercentage(); 
+      void PrintStanding();
+   
+};
+
+#endif
+
+
+// ----team.cpp----
+
+#include <iostream>
+#include <iomanip> 
+#include "Team.h"
+using namespace std;
+
+void Team::SetName(string name) {
+      teamname = name;
+   }
+   
+   void Team::SetWins(int wins) {
+      teamwins = wins;
+   }
+   
+   void Team::SetLosses(int losses) {
+      teamlosses = losses;
+   }
+   
+   // TODO: Declare accessor functions - 
+   //       GetName(), GetWins(), GetLosses()
+   string Team::GetName() {
+      return teamname;
+   }
+   
+   int Team::GetWins() {
+      return teamwins;
+   }
+   
+   int Team::GetLosses() {
+      return teamlosses;
+   }
+   
+   double Team::GetWinPercentage() {
+      return static_cast<double>(teamwins) / (static_cast<double>(teamwins)+teamlosses);
+   }
+   
+   // TODO: Declare PrintStanding()
+   void Team::PrintStanding() {
+      if (GetWinPercentage() >= .50) {
+         cout << setprecision(2);
+         cout << "Win percentage: " << GetWinPercentage() << endl;
+         cout << "Congratulations, Team " << teamname << " has a winning average!" << endl;
+      }
+      else {
+         cout << setprecision(2);
+         cout << "Win percentage: " << GetWinPercentage() << endl;
+         cout << "Team " << teamname << " has a losing average." << endl;
+      }
+   }
